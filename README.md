@@ -30,8 +30,7 @@ Create an ASP.NET Core web app by following these steps:
 1.	Open Visual Studio and then select Create a new project.
 2.	In Create a new project, find and choose ASP.NET Core Web Application for C#, then select Next.
 3.	In Configure your new project, name the application myFirstAzureWebApp, and then select Create.
- 
-![alt text](/VS1.png "New Project")
+![Screenshot](vs1.png)
 
 
 
