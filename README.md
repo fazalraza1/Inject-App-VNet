@@ -20,7 +20,7 @@ We will create app service using Azure Cloud Shell and Deploy Sample app using V
 ## Step By Step
 
 ### At high level steps
-1)  Create Virtual Networks
+1)  Create Virtual Networks, create peering between Virtual Networks.
 2)  Create App Service using CLI
 3)  Publish a sample app using Visual Studio 2019
 4)  Create Application Gateway using CLI
@@ -78,12 +78,11 @@ If some reason Front IP Configurations, Type Private is not configured, login in
 ![Screenshot](vs6.png)
 
 
-FrontEndPrivIP
-10.6.0.100
-
-
 ### Step 5
 Configure App Service as a backend in Application Gateway
+
+Use steps outlined in the below articker to confiure App Service as a backend in Application Gateway.
+https://docs.microsoft.com/en-us/azure/application-gateway/configure-web-app-portal
 
 ### Step 6
 Create the access restriction using service endpoints.
