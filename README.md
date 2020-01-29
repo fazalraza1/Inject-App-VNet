@@ -17,11 +17,19 @@ There are two parts to this configuration besides creating App Service and the A
 5)	Visual Studio 2019
 We will create app service using Azure Cloud Shell and Deploy Sample app using Visual Studio 2019.
 
-###Step By Step
-At high level, 
+### Step By Step
+
+#### At high level, 
+1)  Create App Service using CLI, 
+2)  Publish a sample app using Visual Studio 2019
+3)  Create Application Gateway
+4)  Configure App Service as a backend in Application Gateway
+5)  Create the access restriction using service endpoints.
 
 ### Create a resource Group
 az group create --location eastus --name AppServNetInteg 
+### Virtual Networks using Azure CLI from NetworkCreation.sh script. 
+
 ### Create a app service plan
 az appservice plan create --name mywebapp --resource-group AppServNetInteg --sku S1 
 
@@ -49,6 +57,12 @@ Create an ASP.NET Core web app by following these steps:
 6.  After Publish complete, you should see browser should open up and display the website you just published. 
 
 Next Step is to create Application Gateway, will use Azure Cloud Shell.
+
+
+
+
+After the Application Gateway is deployed, next step is to enable Service Endpoint in subnet where Application Gateway is deployed. 
+
 
 
 
