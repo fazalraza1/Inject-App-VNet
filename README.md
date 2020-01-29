@@ -7,6 +7,8 @@ An Azure App Service can act as if it in a virtual network with a private IP for
 1)	Service Endpoint + Application Gateway
 2)	User Reginal VNet integration (preview)
 
+![Screenshot](Arch.png)
+
 This article is written only for multi-tenant App Service.
 
 Before you start deploying in your lab, read about the App Service VNet Integration and Networking features here and here.
@@ -91,6 +93,12 @@ https://docs.microsoft.com/en-us/azure/application-gateway/configure-web-app-por
 ### Step 6
 Create the access restriction using service endpoints.
 
+az webapp config access-restriction add --resource-group AppServNetInteg \
+--name faraza-mywebapp1 \
+--rule-name app_gateway_rule --action Allow \
+--vnet-name AppGWvNet --subnet AppGWvNet --priority 300
+
+After Step 6 completed, you can create a test VM, and access the website using private ip address of the Application Gateway private ip address. 
 
 
 
