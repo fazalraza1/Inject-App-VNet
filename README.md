@@ -1,12 +1,16 @@
 Inject App Service in a Virtual Network.
 
 ## Introduction.
-Lot of customer have requirement to run Azure App Service in a virtual network with private IP for inbound and outbound. There is no perfect solution at this time until we have Private Link enabled for App Service. 
-This article is written for only multi-tenant App Service.
+Lot of customer have requirement to run Azure App Service in a virtual network with private IP for inbound and outbound. There is no perfect solution at this time until we have Private Link enabled for App Service.
+
 An Azure App Service can act as if it in a virtual network with a private IP for inbound and with an outbound that in the virtual network if you combine
 1)	Service Endpoint + Application Gateway
 2)	User Reginal VNet integration (preview)
+
+This article is written only for multi-tenant App Service.
+
 Before you start deploying in your lab, read about the App Service VNet Integration and Networking features here and here.
+
 ## Pre-Requisutes.
 There are two parts to this configuration besides creating App Service and the Application Gateway. The first part is enabling service endpoints in the subnet of the virtual network where the Application Gateway is deployed. Service endpoint will ensure all network traffic leaving the subnet towards the App Service will be tagged with the specific subnet ID. The Second part is to set the access restriction of the specific web app to ensure that only traffic tagged with this specific subnet ID is allowed. 
 
@@ -37,10 +41,10 @@ Create App Service using CLI
 az group create --location eastus --name AppServNetInteg
 
 #### Create a app service plan
-az appservice plan create --name mywebapp --resource-group AppServNetInteg --sku S1 
+az appservice plan create --name myAppServPlan --resource-group AppServNetInteg --sku S1 
 
 #### Create a web app.
-az webapp create -–name mywebapp –-resource-group AppServNetInteg –-plan mywebapp
+az webapp create --resource-group AppServNetInteg --plan myAppServPlan --name faraza-mywebapp1
 
 #### Step 3
 Publish a sample app using Visual Studio 2019.
@@ -81,17 +85,11 @@ If some reason Front IP Configurations, Type Private is not configured, login in
 ### Step 5
 Configure App Service as a backend in Application Gateway
 
-Use steps outlined in the below articker to confiure App Service as a backend in Application Gateway.
+Use steps outlined in the below article to confiure App Service as a backend in Application Gateway.
 https://docs.microsoft.com/en-us/azure/application-gateway/configure-web-app-portal
 
 ### Step 6
 Create the access restriction using service endpoints.
-
-
-
-
-After the Application Gateway is deployed, next step is to enable Service Endpoint in subnet where Application Gateway is deployed. 
-
 
 
 
