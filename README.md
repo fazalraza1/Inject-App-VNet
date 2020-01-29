@@ -31,6 +31,19 @@ Create an ASP.NET Core web app by following these steps:
 2.	In Create a new project, find and choose ASP.NET Core Web Application for C#, then select Next.
 3.	In Configure your new project, name the application myFirstAzureWebApp, and then select Create.
 ![Screenshot](vs1.png)
+4.  For this quickstart, choose the Web Application template. Make sure authentication is set to No Authentication and no other option is selected. Select Create.
+![Screenshot](vs2.png)
+5.  From the Visual Studio menu, select Debug > Start Without Debugging to run the web app locally.
+![Screenshot](vs3.png)
+### Publish your web app
+1.  In Solution Explorer, right-click the myFirstAzureWebApp project and select Publish.
+2.  Choose App Service and then select Publish.
+![Screenshot](vs4.png)
+3.  In App Service Select Existing, your options depend on whether you're signed in to Azure already and whether you have a Visual Studio account linked to an Azure account. Select either Add an account or Sign in to sign in to your Azure subscription. If you're already signed in, select the account you want.
+4.  If you have more then one Subscription, select the one where resource group was crated in previous step.
+5.  Select Resource Group or Resource Type, then select WebApp that was created in revious steps. Move to next step, and select Publish.
+6.  After Publish complete, you should see browser should open up and display the website you just published. 
+
 
 
 
