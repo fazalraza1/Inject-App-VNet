@@ -61,10 +61,25 @@ Create an ASP.NET Core web app by following these steps:
 3.  In App Service Select Existing, your options depend on whether you're signed in to Azure already and whether you have a Visual Studio account linked to an Azure account. Select either Add an account or Sign in to sign in to your Azure subscription. If you're already signed in, select the account you want.
 4.  If you have more then one Subscription, select the one where resource group was crated in previous step.
 5.  Select Resource Group or Resource Type, then select WebApp that was created in revious steps. Move to next step, and select Publish.
-6.  After Publish complete, you should see browser should open up and display the website you just published. 
+6.  After Publish complete, you should see browser should open up and display the website you just published.
+![Screenshot](vs5.png)
 
 ### Step 4
 Create Application Gateway using CLI
+
+az network application-gateway create --resource-group AppServNetInteg --name MyAppGateway \
+--capacity 2 --sku Standard_v2 \
+    --vnet-name AppGWVNet --subnet AppGWvsub \
+	--http-settings-cookie-based-affinity Enabled \
+    --public-ip-address MyAppGWPubIP \
+    --private-ip-address 10.6.0.101
+
+If some reason Front IP Configurations, Type Private is not configured, login into the Azure portal set the Private IP, use a unused private IP from the subnet used in Application Gateway creations.
+![Screenshot](vs6.png)
+
+
+FrontEndPrivIP
+10.6.0.100
 
 
 ### Step 5
