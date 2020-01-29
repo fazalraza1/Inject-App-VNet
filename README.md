@@ -18,7 +18,7 @@ There are two parts to this configuration besides creating App Service and the A
 We will create app service using Azure Cloud Shell and Deploy Sample app using Visual Studio 2019.
 
 ###Step By Step
-At high level, we will create App Service using CLI, Publish app using Visual Studio 2019, create Application Gateway.
+At high level, 
 
 ### Create a resource Group
 az group create --location eastus --name AppServNetInteg 
