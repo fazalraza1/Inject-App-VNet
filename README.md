@@ -17,27 +17,34 @@ There are two parts to this configuration besides creating App Service and the A
 5)	Visual Studio 2019
 We will create app service using Azure Cloud Shell and Deploy Sample app using Visual Studio 2019.
 
-### Step By Step
+## Step By Step
 
-#### At high level, 
-1)  Create App Service using CLI, 
-2)  Publish a sample app using Visual Studio 2019
-3)  Create Application Gateway
-4)  Configure App Service as a backend in Application Gateway
-5)  Create the access restriction using service endpoints.
+### At high level steps
+1)  Create Virtual Networks
+2)  Create App Service using CLI
+3)  Publish a sample app using Visual Studio 2019
+4)  Create Application Gateway using CLI
+5)  Configure App Service as a backend in Application Gateway
+6)  Create the access restriction using service endpoints.
 
-### Create a resource Group
-az group create --location eastus --name AppServNetInteg 
-### Virtual Networks using Azure CLI from NetworkCreation.sh script. 
+### Step 1
+Virtual Networks using Azure CLI from NetworkCreation.sh script.
 
-### Create a app service plan
+### Step 2
+Create App Service using CLI
+
+#### Create a resource Group
+az group create --location eastus --name AppServNetInteg
+
+#### Create a app service plan
 az appservice plan create --name mywebapp --resource-group AppServNetInteg --sku S1 
 
-### Create a web app.
+#### Create a web app.
 az webapp create -–name mywebapp –-resource-group AppServNetInteg –-plan mywebapp
-At this time webapp is created with app service plan sku S1.
-### Deploy a sample app using Visual Studio 2019. 
-Create an ASP.NET Core web app
+
+#### Step 3
+Publish a sample app using Visual Studio 2019.
+
 Create an ASP.NET Core web app by following these steps:
 1.	Open Visual Studio and then select Create a new project.
 2.	In Create a new project, find and choose ASP.NET Core Web Application for C#, then select Next.
@@ -56,7 +63,15 @@ Create an ASP.NET Core web app by following these steps:
 5.  Select Resource Group or Resource Type, then select WebApp that was created in revious steps. Move to next step, and select Publish.
 6.  After Publish complete, you should see browser should open up and display the website you just published. 
 
-Next Step is to create Application Gateway, will use Azure Cloud Shell.
+### Step 4
+Create Application Gateway using CLI
+
+
+### Step 5
+Configure App Service as a backend in Application Gateway
+
+### Step 6
+Create the access restriction using service endpoints.
 
 
 

@@ -22,6 +22,7 @@ az network public-ip create \
   --name MyAppGWPubIP \
   --allocation-method Static \
   --sku Standard
+  
 
 az network application-gateway create --resource-group AppServNetInteg --name MyAppGateway \
 --capacity 2 --sku Standard_v2 \
@@ -29,4 +30,3 @@ az network application-gateway create --resource-group AppServNetInteg --name My
 	--http-settings-cookie-based-affinity Enabled \
     --public-ip-address MyAppGWPubIP \
     --private-ip-address 10.6.0.100
-    
