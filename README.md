@@ -48,6 +48,8 @@ Create an ASP.NET Core web app by following these steps:
 5.  Select Resource Group or Resource Type, then select WebApp that was created in revious steps. Move to next step, and select Publish.
 6.  After Publish complete, you should see browser should open up and display the website you just published. 
 
+Test2343
+
 
 
 
