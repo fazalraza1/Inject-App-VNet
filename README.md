@@ -11,7 +11,8 @@ It is possible for Azure App Service to act as if it in a virtual network with a
 
 This article is written only for multi-tenant App Service.
 
-Before you start deploying in your lab, read about the App Service VNet Integration and Networking features here and here.
+Before you start deploying in your lab, read about the App Service VNet Integration and Networking features [here](https://docs.microsoft.com/en-us/azure/app-service/web-sites-integrate-with-vnet) and [here](https://docs.microsoft.com/en-us/azure/app-service/networking-features).
+
 
 ## Pre-Requisites.
 There are two parts to this configuration besides creating App Service and the Application Gateway. The first part is enabling service endpoints in the subnet of the virtual network where the Application Gateway is deployed. Service endpoint will ensure all network traffic leaving the subnet towards the App Service will be tagged with the specific subnet ID. The Second part is to set the access restriction of the specific web app to ensure that only traffic tagged with this specific subnet ID is allowed. 
